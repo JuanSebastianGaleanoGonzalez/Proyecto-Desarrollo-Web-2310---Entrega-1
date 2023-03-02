@@ -16,7 +16,7 @@ import java.util.List;
 public class Conductor {
 
     @Id @GeneratedValue
-    Long id;
+    private Long id;
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "cedula")

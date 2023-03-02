@@ -15,16 +15,16 @@ import lombok.ToString;
 @Getter @Setter @ToString @EqualsAndHashCode
 public class Transmilenio {
     @Id @GeneratedValue
-    Long id;
+    private Long id;
     @Column(name = "placa")
     private String placa;
     @Column(name = "modelo")
     private String modelo;
 
-    @OneToMany
+    @ManyToMany
     private List<Ruta> rutasAsignadas = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "listadoBuses")
     private List<Conductor> conductoresAsignados = new ArrayList<>();
     public Transmilenio(){};
 

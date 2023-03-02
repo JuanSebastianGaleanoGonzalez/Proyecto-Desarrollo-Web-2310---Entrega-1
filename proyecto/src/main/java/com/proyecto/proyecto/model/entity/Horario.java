@@ -12,14 +12,16 @@ import lombok.ToString;
 @Getter @Setter @ToString @EqualsAndHashCode
 public class Horario {
     @Id @GeneratedValue
-    Long id;
+    private Long id;
     @Column(name = "horaInicio")
     private int horaInicio;
     @Column(name = "horaFinal")
     private int horaFinal;
     @Column (name = "diaSemana")
     private String diaSemana;
-    
+
+    @ManyToOne
+    private Ruta ruta;
     public Horario(){};
 
     public Horario(int horaInit, int horaEnd, String dia){
