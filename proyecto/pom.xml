@@ -8,10 +8,10 @@
 		<version>3.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.proyectoDeCurso</groupId>
+	<groupId>com.proyecto</groupId>
 	<artifactId>proyecto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ProyectoDeCurso - DesarrolloWeb</name>
+	<name>DW_Proyecto</name>
 	<description>Proyecto de Curso - Desarrollo Web. Juan Sebastian Galeano Gonzalez y Anderson Alvarado.</description>
 	<properties>
 		<java.version>17</java.version>
