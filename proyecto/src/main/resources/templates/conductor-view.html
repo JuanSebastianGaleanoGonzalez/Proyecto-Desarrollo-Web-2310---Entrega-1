@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/estilo.css">
+
+</head>
+
+<body>
+    <h1>Conductor</h1>
+    <p th:text="|Cedula: ${conductor.cedula}|"></p>
+    <p th:text="|Nombre: ${conductor.nombre}|"></p>
+    <p th:text="|Telefono: ${conductor.telefono}|"></p>
+    <p th:text="|Direccion: ${conductor.direccion}|"></p>
+    <table class="person-list">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Placa</th>
+            <th>Modelo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${conductor.getListadoBuses()}" th:if="${p.id}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.placa}"></td>
+            <td th:text="${p.modelo}"></td>
+            <td>
+                <a th:href="@{/transmilenio/delete/{id}(id=${p.id})}">Eliminar</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/conductor/list}">Volver</a>
+</body>
+
+</html>

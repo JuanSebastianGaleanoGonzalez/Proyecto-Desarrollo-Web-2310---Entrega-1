@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/estilo.css">
+</head>
+
+<body>
+
+    <h1>Conductores</h1>
+    <a th:href="@{/conductor/search}">Buscar</a>
+
+    <table class="person-list">
+        <thead>
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="p : ${conductores}" th:if="${p.cedula}">
+                <td th:text="${p.cedula}"></td>
+                <td th:text="${p.nombre}"></td>
+                <td th:text="${p.telefono}"></td>
+                <td th:text="${p.direccion}"></td>
+                <td>
+                    <a th:href="@{/conductor/view/{id}(id=${p.id})}">Ver</a>
+                </td>
+                <td>
+                    <a th:href="@{/conductor/edit-form/{id}(id=${p.id})}">Editar</a>
+                </td>
+                <td>
+                    <a th:href="@{/conductor/delete/{id}(id=${p.id})}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

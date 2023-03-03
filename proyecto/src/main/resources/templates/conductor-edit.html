@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/estilo.css">
+</head>
+
+<body>
+    <div class="formcontainer">
+        <h1>Conductor</h1>
+        <form action="#" th:action="@{/conductor/save}" th:object="${conductor}" method="post">
+            <input type="hidden" th:field="*{id}" id="id">
+            <label for="conductorCedula">Cedula: </label>
+            <input type="text" th:field="*{cedula}" id="conductorCedula">
+            <span th:if="${#fields.hasErrors('cedula')}" th:errors="*{cedula}"
+                th:class="${#fields.hasErrors('cedula')} ? 'error' : ''"></span>
+            <label for="conductorName">Nombre: </label>
+            <input type="text" th:field="*{nombre}" id="conductorName">
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"
+                th:class="${#fields.hasErrors('nombre')} ? 'error' : ''"></span>
+            <label for="conductorTelefono">Telefono: </label>
+            <input type="text" th:field="*{telefono}" id="conductorTelefono">
+            <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"
+                th:class="${#fields.hasErrors('telefono')} ? 'error' : ''"></span>
+            <label for="conductorDireccion">Direccion: </label>
+            <input type="text" th:field="*{direccion}" id="conductorDireccion">
+            <span th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}"
+                th:class="${#fields.hasErrors('direccion')} ? 'error' : ''"></span>
+            <button type="submit">Editar</button>
+        </form>
+    </div>
+
+    <a th:href="@{/conductor/list}">Cancelar</a>
+</body>
+
+</html>
